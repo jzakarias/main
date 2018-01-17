@@ -1,3 +1,0 @@
-#!/usd/bin/python
-
-
