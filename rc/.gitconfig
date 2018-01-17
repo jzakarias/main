@@ -1,0 +1,33 @@
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    dtree = log --graph --pretty=oneline --abbrev-commit --all --decorate --date-order
+    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+    fa = log --all --decorate --graph --pretty=format:'%Cred%h%Creset -%Cgreen(%ci) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s' --abbrev-commit
+    d = difftool
+    patch = log -p
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    changes = diff --name-status -r
+    diffstat = diff --stat -r
+    diffadded = diff --cached
+    gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+    edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim `f`"
+    add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
+    lg = log --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit --date=relative
+    tree = log --graph --pretty=oneline --abbrev-commit --all --decorate
+    stree = log --graph --pretty=oneline --abbrev-commit --decorate
+    spull = submodule foreach \"git pull origin master\"
+[color]
+    ui = auto
+[user]
+	name = Janos Zakarias
+	email = jzakarias@gmail.com
+[core]
+	editor = vim
+[push]
+	default = simple
+#[http]
+#	proxy = http://159.107.194.60:8000
