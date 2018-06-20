@@ -3,7 +3,7 @@
 set -e
 
 OPTIND=0
-branch=main
+branch=master
 
 function usage() {
     echo help
