@@ -36,5 +36,3 @@ function del_arr_elmt() {
     done
     eval "${_arrname}=(${_local_arr[@]})"
 }
-
-
