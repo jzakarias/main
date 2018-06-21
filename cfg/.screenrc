@@ -1,0 +1,28 @@
+autodetach on
+deflogin off
+startup_message off
+defscrollback 4096
+shell /bin/bash
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+caption splitonly '%{03} '
+rendition so =02
+setenv ENV /home/$LOGNAME/.bashrc 
+vbell off
+#mousetrack on
+term xterm
+#layout autosave on
+
+# ctrl arrows region navigation
+bindkey ^[[1;5D focus left
+bindkey ^[[1;5C focus right
+bindkey ^[[1;5A focus up
+bindkey ^[[1;5B focus down
+
+# alt arrows window navigation
+bindkey ^[[1;3D prev
+bindkey ^[[1;3C next
+
+# 
+bind s split
+bind v split -v

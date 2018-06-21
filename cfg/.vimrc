@@ -19,14 +19,22 @@ au BufRead,BufNewFile *.casm,*.cs set filetype=asm
 nnoremap zH zt
 nnoremap zL zb
 
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 nosmarttab
 noremap p mAp`A
 noremap P mAP`A
 set mouse=v
+set scrolloff=3
 
 set laststatus=2
+
+hi StatusLine term=reverse ctermbg=7 ctermfg=0 gui=bold,reverse
+
+if version >= 700
+  au InsertEnter * hi StatusLine term=reverse ctermbg=0 ctermfg=1 gui=undercurl
+  au InsertLeave * hi StatusLine term=reverse ctermbg=7 ctermfg=0 gui=bold,reverse
+endif
+
+set timeoutlen=1000 ttimeoutlen=0
 
 " taglist plugin
 nnoremap <silent> <F8> :TlistToggle<CR>
